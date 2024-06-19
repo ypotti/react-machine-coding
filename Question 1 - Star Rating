@@ -73,3 +73,79 @@ App.css
 
 
 =======================
+
+
+Vanila.JS
+
+Html
+----
+<div>
+  <span id="1" class="star">★</span>
+  <span id="2" class="star">★</span>
+  <span id="3" class="star">★</span>
+  <span id="4" class="star">★</span>
+  <span id="5" class="star">★</span>
+  <p id="message"></p>
+  <button id="clear-btn">
+  Clear
+  </button>
+</div>
+
+CSS
+----
+.star{
+  font-size: 5rem;
+  color: lightgray;
+  cursor: pointer;
+}
+
+.star.active{
+  color: gold;
+}
+
+JS
+---
+const stars = document.querySelectorAll(".star");
+const message = document.getElementById("message");
+const clearBtn = document.getElementById("clear-btn");
+
+stars.forEach(star => {
+	star.addEventListener("click", ()=>handleClick(star.id));
+	star.addEventListener("mouseover", ()=>handleHover(star.id));
+	star.addEventListener("mouseout", ()=>clear());
+})
+
+clearBtn.addEventListener('click', ()=>{
+	message.innerHTML = "";
+  clear();
+})
+
+function handleHover(id){
+	if(message.innerHTML) return;
+  
+  stars.forEach(star => {
+  	if(star.id <= id){
+    	star.classList.add("active");
+    }
+  });
+};
+
+function clear(force=false){
+	if(message.innerHTML) return;
+  
+  stars.forEach(star => {
+    star.classList.remove("active");
+  });
+}
+
+function handleClick(id){
+	if(message.innerHTML) return;
+
+	stars.forEach(star => {
+  	if(star.id <= id){
+    	star.classList.add("active");
+    }
+  });
+  
+  message.innerHTML = "Thanks for your Review!"
+}
