@@ -1,8 +1,29 @@
-# React + Vite
+# Type Ahead Component
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Functional Requirements (FR) :
+ - Type in Input Field for search.
+ - RealTime Suggestion in list.
+ - Based on keywords, suggestions should change.
+ - Should use debouncing while calling API
+ - Loading Indicator
+ - Error Handling
+ - History panel to store the previous searches (Optional)
 
-Currently, two official plugins are available:
+Non Functional Requirements (NFR) :
+ - Responsive with all screen sizes
+ - Can use Cache to store the results
+ - Keyboard Accessibility => navigate the list with up and down keys.
+ - Compatibility [across all browsers]
+ - Performance
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+High Level Design (HLD) :
+
+![HLD](https://github.com/user-attachments/assets/381cccc8-9b21-45b9-9c2b-4fd454c521fd)
+
+---
+
+
+Low Level Design (LLD):
+
+![LLD](https://github.com/user-attachments/assets/52666449-c8b7-41f3-b36e-1e6feff54f88)
